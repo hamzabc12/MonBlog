@@ -1,0 +1,30 @@
+<div class="container addarticle-container">
+  <div class="row">
+      <div class="col-md-6 addarticle-form-1">
+          <h3>Add Article</h3>
+          <form [formGroup]="addArticleForm">
+              <div class="form-group">
+                  <input class="form-control" type="text" placeholder="Enter title" value="title of article" formControlName="titleArticle">
+              </div>
+              <div class="form-group">
+                <label for="content">Contenu</label>
+                <ckeditor [editor]="Editor" formControlName="content"></ckeditor>
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="file" alife-file-to-base64  [(fileModel)]="files"  (onFileChanged)="ChangeFile($event)"/>
+              </div>
+              <div class="form-group">
+              <label for="category-select">Categorie:</label>
+              <select formControlName="category" name="categorie" id="categorie-select">
+                <option value="">Categorie </option>
+                <option value="sport">Sport</option>
+                <option value="culture">foot</option>
+                <option value="political">tourism</option>
+              </select>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-info btn-md" (click)="addArticle()">Add</button>
+            </div>
+          </form>
+      </div>
+</div>

@@ -1,0 +1,29 @@
+
+<div class="container" *ngFor="let article of tableau;let i = index ;">
+  <div class="well">
+      <div class="media">
+      	<a class="pull-left" href="#">
+    		<img class="media-object" src="{{article.image}}">
+  		  </a>
+  		<div class="media-body">
+        <h4 class="media-heading">{{article.titleArticle}}</h4>
+        <p class="text-right">By UserName</p>
+        <p innerHTML={{article.content}}></p>
+        <ul class="list-inline list-unstyled">
+          <li><span>{{article.category}}</span></li>
+          <li>|</li> 
+
+          <li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
+          <li>|</li>
+         
+          <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+        </ul>      
+      </div>
+      </div>
+      <div class="text-right">
+      <button (click)="showArticles(i)" class="btn btn-info btn-md">Show</button>
+      <button type="button" [routerLink]="['/update-article',i]" routerLinkActive="active" class="btn btn-info btn-md">Update</button>
+      <button (click)="deleteArticles(i)" class="btn btn-info btn-md">Delete</button>
+      </div>
+  </div>
+</div>
