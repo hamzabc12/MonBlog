@@ -7,7 +7,7 @@ app.get('*', (req, res) => {
     res.sendFile(__dirname + '/dist/MonBlog/browser/index.html');
 })
 
-app.listen(3000, (err) => {
+app.listen(3024, (err) => {
     if (err) throw err;
     console.log('server is running on port 3000');
 })
